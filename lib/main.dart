@@ -1,41 +1,29 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MaterialApp(home: Home()));
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
+class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
-  @override
-  Widget build(BuildContext context) {
+    // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
+        title: Text("We.Deliver"),
+        centerTitle: true,
+        backgroundColor: Colors.limeAccent[500],
       ),
       body: Center(
-        child: Text(
-          'Hello, World!',
+        child: Image(
+          image: AssetImage("assets/img1.jpeg"),
+
+          //       image: NetworkImage(
+          //           "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwallpaperset.com%2Fwallpaper-themes&psig=AOvVaw05H_YwnPkDhACHzqUmxdcQ&ust=1695563045913000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCNDAkNvuwIEDFQAAAAAdAAAAABAE")
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Text("+"),
+        onPressed: () {},
+        backgroundColor: Colors.green[500],
       ),
     );
   }
