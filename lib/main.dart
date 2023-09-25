@@ -1,30 +1,21 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
+import 'homepage.dart';
 
-void main() => runApp(MaterialApp(home: Home()));
+void main() {
+  runApp(const MyApp());
+}
 
-class Home extends StatelessWidget {
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("We.Deliver"),
-        centerTitle: true,
-        backgroundColor: Colors.limeAccent[500],
-      ),
-      body: Center(
-        child: Image(
-          image: AssetImage("assets/img1.jpeg"),
-
-          //       image: NetworkImage(
-          //           "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwallpaperset.com%2Fwallpaper-themes&psig=AOvVaw05H_YwnPkDhACHzqUmxdcQ&ust=1695563045913000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCNDAkNvuwIEDFQAAAAAdAAAAABAE")
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Text("+"),
-        onPressed: () {},
-        backgroundColor: Colors.green[500],
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: HomePage(),
+      theme: ThemeData(primarySwatch: Colors.deepPurple),
     );
   }
 }
